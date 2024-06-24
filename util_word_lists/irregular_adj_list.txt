@@ -1,0 +1,5 @@
+good-better-best
+bad-worse-worst
+far-farther\further-farthest\furthest
+little-less-least
+

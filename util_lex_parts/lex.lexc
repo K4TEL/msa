@@ -1,0 +1,274 @@
+Multichar_Symbols
++N +Pl +Sg 
++V +PS +PP +FP +PC +FC +FS +PR
++AJ +Cm +Sp +Rg
++NS1 +NS2 +NS3 +NS4 +NS5 +NS6 +NS7 +NS8 +NS9 +NS10 +NS11 +NS12 +NS13 +NS14 +NS15
++AS1 +AS2 +AS3 +AS4 +AS5 +AS6 +AS7 +AS8 +AS9 +AS10 +AS11
++ADV1 +ADV2 +ADV3
++VS1 +VS2 +VS3 +VS4   
+
+LEXICON Root
+Prefix  ;
+Noun	;
+Verb	;
+Adj	;
+ADV	;
+Closed  ;
+
+LEXICON Noun
+NREG	;
+NIRG	;
+
+LEXICON Adj
+AREG	;
+AIRG	;
+
+LEXICON Verb
+VREG	;
+VIRG	;
+
+LEXICON NEnd
++N+Pl:^s	#;
++N+Sg:0		#;
+
+LEXICON VEnd
++V+PS:^ed	#;
++V+PP:^ed	#;
++V+FP:^ed	#;
++V+PC:^ing	#;
++V+FC:^ing	#;
++V+FS:0	#;
++V+PR:0	#;
++V+PR3:^s	#;
+VNSuf   ;
+VASuf   ;
+
+LEXICON AEnd
++AJ+Cm:^er	#;
++AJ+Sp:^est	#;
++AJ+Rg:0	#;
+
+LEXICON Prefix
+UniPref	;
+VPref	;
+NPref	;
+APref	;
+
+LEXICON VPref
+over^	Verb;
+fore^	Verb;
+pre^	Verb;
+de^	Verb;
+be^	Verb;
+un^	Verb;
+under^	Verb;
+sub^	Verb;
+inter^	Verb;
+co^	Verb;
+re^	Verb;
+mis^	Verb;
+out^	Verb;
+
+LEXICON NPref
+anti^	Noun;
+auto^	Noun;
+bi^	Noun;
+ex^	Noun;
+sur^	Noun;
+pseudo^	Noun;
+semi^	Noun;
+neo^	Noun;
+poly^	Noun;
+mini^	Noun;
+mono^	Noun;
+tele^	Noun;
+super^	Noun;
+tri^	Noun;
+kilo^	Noun;
+mega^	Noun;
+hyper^	Noun;
+counter^	Noun;
+vice^	Noun;
+super^	Noun;
+ultra^	Noun;
+in^	Noun;
+re^	Noun;
+mis^	Noun;
+out^	Noun;
+co^	Noun;
+inter^	Noun;
+sub^	Noun;
+under^	Noun;
+
+LEXICON APref
+non^	Adj;
+ir^	Adj;
+im^	Adj;
+il^	Adj;
+in^	Adj;
+un^	Adj;
+
+LEXICON UniPref
+dis^	Noun;
+dis^	Adj;
+dis^	Verb;
+0	Noun;
+0	Adj;
+0	Verb;
+
+LEXICON VIRG
+V1unique	;
+V2unique	;
+V3unique	;
+
+LEXICON VREnd
++V+PC:^ing	#;
++V+FC:^ing	#;
++V+FS:0	#;
++V+PR:0	#;
+
+LEXICON NSuf
++NS1:^age	NEnd;
++NS2:^dom	NEnd;
++NS3:^hood	NEnd;
++NS4:^ism	NEnd;
++NS5:^ist	NEnd;
++NS6:^ship	NEnd;
+NASuf   ;
+NVSuf   ;
+ADVSuf  ;
+
+LEXICON ASuf
++AS1:^al	#;
++AS2:^ly	#;
++AS3:^ish	#;
++AS4:^ive	#;
+ANSuf   ;
+AVSuf   ;
+ADVSuf  ;
+
+LEXICON ADVSuf
++N+ADV1:^wise	#;
++N+ADV2:^ward	#;
++N+ADV3:^wards	#;
++A+ADV1:^ly	#;
+
+LEXICON AIRG
+Noun	NASuf;
+Verb	VASuf;
+Adj ASuf;
+AIRGf	;
+
+LEXICON AIRGf
+good+AR+Rg:good	#;
+good+AR+Cm:better	#;
+good+AR+Sp:best	#;
+bad+AR+Rg:bad	#;
+bad+AR+Cm:worse	#;
+bad+AR+Sp:worst	#;
+little+AR+Rg:little	#;
+little+AR+Cm:less	#;
+little+AR+Sp:least	#;
+far+AR+Rg:far	#;
+far+AR+Cm:further	#;
+far+AR+Sp:furthest	#;
+far+AR+Cm:farther	#;
+far+AR+Sp:farthest	#;
+
+LEXICON NVSuf
++N+VS1:^ate	VEnd;
++N+VS2:^ise	VEnd;
++N+VS3:^ize	VEnd;
++N+VS4:^ify	VEnd;
+
+LEXICON AVSuf
++A+VS1:^ate	VEnd;
++A+VS2:^ise	VEnd;
++A+VS3:^ize	VEnd;
+
+LEXICON ANSuf
++A+NS1:^cy	NEnd;
++A+NS2:^dom	NEnd;
++A+NS3:^ness	NEnd;
++A+NS4:^ist	NEnd;
++A+NS5:^ism	NEnd;
++A+NS6:^ty	NEnd;
++A+NS7:^ity	NEnd;
+
+LEXICON VNSuf
++V+NS1:^age	NEnd;
++V+NS2:^al	NEnd;
++V+NS3:^ance	NEnd;
++V+NS4:^ence	NEnd;
++V+NS5:^er	NEnd;
++V+NS6:^or	NEnd;
++V+NS7:^ee	NEnd;
++V+NS8:^ment	NEnd;
++V+NS9:^ry	NEnd;
++V+NS10:^ery	NEnd;
++V+NS11:^sion	NEnd;
++V+NS12:^tion	NEnd;
++V+NS13:^xion	NEnd;
++V+NS14:^ant	NEnd;
++V+NS15:^ent	NEnd;
+
+LEXICON VASuf
++V+AS1:^y	#;
++V+AS2:^al	#;
++V+AS3:^less	#;
++V+AS4:^ing	#;
++V+AS5:^ic	#;
++V+AS6:^ive	#;
++V+AS7:^able	#;
++V+AS8:^ible	#;
+
+LEXICON NASuf
++N+AS1:^y	#;
++N+AS2:^al	#;
++N+AS3:^ial	#;
++N+AS4:^ly	#;
++N+AS5:^ish	#;
++N+AS6:^ic	#;
++N+AS7:^some	#;
++N+AS8:^ful	#;
++N+AS9:^able	#;
++N+AS10:^ful	#;
++N+AS11:^ous	#;
+
+LEXICON NIRG
+aircraft+NR+Pl:aircraft	#;
+aircraft+NR+Sg:aircraft	#;
+alumna+NR+Pl:alumnae	#;
+alumnae+NR+Sg:alumna	#;
+bison+NR+Pl:bison	#;
+bison+NR+Sg:bison	#;
+child+NR+Pl:children	#;
+children+NR+Sg:child	#;
+foot+NR+Pl:feet	#;
+feet+NR+Sg:foot	#;
+goose+NR+Pl:geese	#;
+geese+NR+Sg:goose	#;
+graffito+NR+Pl:graffiti	#;
+graffiti+NR+Sg:graffito	#;
+louse+NR+Pl:lice	#;
+lice+NR+Sg:louse	#;
+man+NR+Pl:men	#;
+men+NR+Sg:man	#;
+minutia+NR+Pl:minutiae	#;
+minutiae+NR+Sg:minutia	#;
+moose+NR+Pl:moose	#;
+moose+NR+Sg:moose	#;
+mouse+NR+Pl:mice	#;
+mice+NR+Sg:mouse	#;
+ox+NR+Pl:oxen	#;
+oxen+NR+Sg:ox	#;
+sheep+NR+Pl:sheep	#;
+sheep+NR+Sg:sheep	#;
+swine+NR+Pl:swine	#;
+swine+NR+Sg:swine	#;
+tooth+NR+Pl:teeth	#;
+teeth+NR+Sg:tooth	#;
+vita+NR+Pl:vitae	#;
+vitae+NR+Sg:vita	#;
+woman+NR+Pl:women	#;
+women+NR+Sg:woman	#;

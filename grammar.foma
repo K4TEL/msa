@@ -1,0 +1,63 @@
+# Vowels
+define V [ a | e | i | o | u ];
+
+# Consonants
+define C [ b | c | d | f | g | h | j | k | l | m | n | p | r | s | t | f | x | w | z ];
+
+read lexc english.lexc
+define Lexicon;
+
+# Consonant doubling: 1-letter consonant doubled before -ing/-ed/-er/-est (beg/begging)
+define ConsonantDoubling g -> g g || V _ "^" [i n g | e d | e r | e s t ]   ,,
+                         l -> l l || V _ "^" [i n g | e d | e r | e s t ]   ,,
+                         t -> t t || V _ "^" [i n g | e d | e r | e s t ]   ,,
+                         d -> d d || V _ "^" [i n g | e d | e r | e s t ]   ,,
+                         b -> b b || V _ "^" [i n g | e d | e r | e s t ]   ,,
+                         n -> n n || V _ "^" [i n g | e d | e r | e s t ]   ,,
+                         m -> m m || V _ "^" [i n g | e d | e r | e s t ]   ,,
+                         f -> f f || V _ "^" [i n g | e d | e r | e s t ]   ,,
+                         z -> z z || V _ "^" [i n g | e d | e r | e s t ]   ,,
+                         s -> s s || V _ "^" [i n g | e d | e r | e s t ]   ,,
+                         r -> r r || V _ "^" [i n g | e d | e r | e s t ]   ,,
+                         p -> p p || V _ "^" [i n g | e d | e r | e s t ]   ;
+
+# Consonant doubling: 1-letter consonant doubled after vowel, before -ing/-ed/-er/-est (beg/begging)
+# define ConsonantDoubling DC -> DC DC || V _ "^" [i n g | e d | e r | e s t] ;
+
+# E deletion: silent e dropped before -ing and -ed (make/making)
+define EDeletion e -> 0 || _ "^" [ i n g | e d ] ;
+
+# E insertion: e added after -s, -z, -x, -ch, -sh before s (watch/watches)
+define EInsertion [..] -> e || s | z | x | c h | s h _ "^" s ;
+
+# Y replacement: after consonant -y changes to -ie before -s, -i before -ed (try/tries)
+define YReplacement y -> i e || C _ "^" s    ,,
+                    y -> i   || C _ "^" e d  ;
+
+# F replacement: -f changes to -v before -s (knife/knives)
+define FReplacement f -> v e || _ "^" s    ,,
+                    f e -> v e || _ "^" s  ;
+
+# ex replacement: -ex changes to -ice before -s (vertex/vertices)
+define EXReplacement e x -> i c e || _ "^" s ;
+
+# K insertion: verbs ending with vowel + -c add -k (panic/panicked)
+define KInsertion [..] -> k || V c _ "^" [e d | i n g];
+
+# Cleanup: remove morpheme boundaries
+define Cleanup "^" -> 0;
+
+read lexc english.lexc
+define Lexicon;
+
+define Grammar Lexicon           .o.
+               ConsonantDoubling .o.
+               EDeletion         .o.
+               EInsertion        .o.
+               YReplacement      .o.
+               FReplacement      .o.
+               EXReplacement     .o.
+               KInsertion        .o.
+               Cleanup;
+
+regex Grammar;

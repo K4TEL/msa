@@ -1,0 +1,7 @@
+util_lex_parts/lex.lexc
+util_lex_parts/adv.lexc
+util_lex_parts/nreg.lexc
+util_lex_parts/cls.lexc
+util_lex_parts/vreg.lexc
+util_lex_parts/virg.lexc
+util_lex_parts/areg.lexc
